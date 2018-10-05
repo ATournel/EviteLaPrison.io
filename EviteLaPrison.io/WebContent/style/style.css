@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+/*
+* {
+	border: 1px solid black;
+}
+*/
+
+/* Formulaires d'Inscription/Connexion */
+
+.signForms {
+	margin: 5vw;
+	padding: 3vw;
+	width: 30vw;
+	height: auto;
+}
+
+.forms {
+	display: flex;
+	justify-content: center;
+}

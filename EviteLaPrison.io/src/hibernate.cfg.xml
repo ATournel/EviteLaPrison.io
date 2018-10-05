@@ -30,6 +30,7 @@
  
         <!-- Mapping files -->
         <mapping resource="user.hbm.xml" />
+        <mapping resource="cdc.hbm.xml" />
  
     </session-factory>
 </hibernate-configuration>

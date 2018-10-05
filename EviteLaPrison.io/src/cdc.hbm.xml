@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.elp.model.Cdc" table="cdc">
+        <id name="cdcId" type="int" column="cdcId">
+            <generator class="increment" />
+        </id>
+        <property name="nom">
+            <column name="nom" />
+        </property>
+        <property name="description">
+            <column name="description" />
+        </property>
+    </class>
+</hibernate-mapping>

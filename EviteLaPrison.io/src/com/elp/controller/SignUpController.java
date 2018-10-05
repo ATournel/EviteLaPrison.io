@@ -1,4 +1,4 @@
-package com.elp;
+package com.elp.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -14,16 +14,16 @@ import com.elp.dao.UserDao;
 import com.elp.model.User;
 
 /**
- * Servlet implementation class SignUpServlet
+ * Servlet implementation class SignUpController
  */
-@WebServlet("/SignUpServlet")
-public class SignUpServlet extends HttpServlet {
+@WebServlet("/SignUpController")
+public class SignUpController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SignUpServlet() {
+	public SignUpController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -56,8 +56,17 @@ public class SignUpServlet extends HttpServlet {
 
 		User user = new User();
 
-		dao.addUser(user, firstName, lastName, dob, email, pwd);
-		request.getRequestDispatcher("home.jsp").forward(request, response);
+		boolean mailDispo = dao.checkMailDispo(email);
+		
+		if(mailDispo) {
+			dao.addUser(user, firstName, lastName, dob, email, pwd);
+			request.getRequestDispatcher("home.jsp").forward(request, response);
+		}
+		else {
+			request.setAttribute("invalid", "Cette adresse mail correspond déjà à un compte.");
+			request.getRequestDispatcher("signInUp.jsp").forward(request, response);
+		}
+		
 
 	}
 
