@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>SignIn/UpPage</title>
 </head>
 <body>
 
-	<form action="SignInUpServlet" method="post">
+	<form action="SignUpServlet" method="post">
 		<p>
 			<label for="firstName">Prenom:</label><input type="text"
 				name="firstName">
