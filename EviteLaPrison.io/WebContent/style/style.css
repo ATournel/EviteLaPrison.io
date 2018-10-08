@@ -19,3 +19,127 @@
 	display: flex;
 	justify-content: center;
 }
+
+/* Bannière */
+
+.banner {
+	height: 47vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("alcatraz.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.banner h1 {
+	font-size: 5em;
+	color: #343F4B;
+}
+
+/* HomePage */
+
+.homeBody {		
+	margin-left: 3vw;
+	margin-right: 3vw;
+}
+
+.textPosition {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.homePres {
+	height: 47vh;
+	padding: 3vw;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	display: flex;
+}
+
+.homePres div {
+	margin-right: 1vw;
+	margin-left: 1vw;
+}
+
+.homePres img {
+	width: 40vw;
+	height: 35vh;
+}
+
+.homeExpert {
+	height: 70vh;
+	padding: 3vw;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	background-color: #E5E9F2;
+}
+
+.homeExpert div {
+	background-color: #FFFFFF;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #343F4B;
+}
+
+.homeCdc {
+	height: 70vh;
+	padding: 3vw;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	display: flex;
+}
+
+.homeCdc div {
+	margin-right: 1vw;
+	margin-left: 1vw;
+}
+
+.homeCdc img {
+	width: 40vw;
+	height: 45vh;
+}
+
+.homeLice {
+	height: 70vh;
+	padding: 3vw;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	display: flex;
+	background-color: #E5E9F2;
+}
+
+.homeLice div {
+	margin-right: 1vw;
+	margin-left: 1vw;
+}
+
+.homeLice img {
+	width: 40vw;
+	height: 45vh;
+}
+
+.homeConnect {
+	height: 70vh;
+	padding: 3vw;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	background-color: #FFFFFF;
+}
+
+.homeConnect div {
+	background-color: #E5E9F2;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #343F4B;
+}

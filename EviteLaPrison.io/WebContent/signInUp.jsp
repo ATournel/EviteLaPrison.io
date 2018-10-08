@@ -13,33 +13,12 @@
 </head>
 <body>
 
-	<!-- Nav Bar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="home.jsp">Logo</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarNav" aria-controls="navbarNav"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="home.jsp">Home
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Expertise</a></li>
-			<li class="nav-item"><a class="nav-link" href="CdcServlet">Cahiers
-					des Charges</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Licences</a></li>
-			<li class="nav-item active"><a class="nav-link"
-				href="signInUp.jsp">Mon Compte <span class="sr-only">(current)</span>
-			</a></li>
-		</ul>
-	</div>
-	</nav>
+	<jsp:include page="header.jsp"></jsp:include>
 
 	<div class="forms">
 
 		<!-- Formulaire de Connexion -->
-		<form action="SignInServlet" method="post" class="signForms">
+		<form action="SignInController" method="post" class="signForms">
 			<div class="form-group">
 				<label for="email">Adresse Mail</label> <input type="email"
 					class="form-control" id="email" name="email" required
@@ -56,11 +35,14 @@
 					numbers, and must not contain spaces, special characters, or emoji.
 				</small>
 			</div>
+			<div class="form-group">
+				<c:out value='${ invalidLogin }' />
+			</div>
 			<button type="submit" class="btn btn-primary">Connection</button>
 		</form>
 
 		<!-- Formulaire d'inscription -->
-		<form action="SignUpServlet" method="post" class="signForms">
+		<form action="SignUpController" method="post" class="signForms">
 			<div class="form-group">
 				<label for="firstName">Prenom</label> <input type="text"
 					class="form-control" id="firstName" name="firstName" required
@@ -69,7 +51,7 @@
 			<div class="form-group">
 				<label for="lastName">Nom</label> <input type="text"
 					class="form-control" id="lastName" name="lastName" required
-					placeholder="Password">
+					placeholder="Nom">
 			</div>
 			<div class="form-group">
 				<label for="dob">Date de Naissance</label> <input type="text"

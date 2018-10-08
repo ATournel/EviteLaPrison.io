@@ -22,13 +22,13 @@ public class UserDao {
 		Query query = session.createQuery(queryString);
 		query.setParameter("email", email);
 		user = (User) query.uniqueResult();
-		
+
 		if (user != null) {
 			mailDispo = false;
-		}
-		else {
+		} else {
 			mailDispo = true;
 		}
+		session.close();
 		return mailDispo;
 	}
 
@@ -55,6 +55,7 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		}
+		session.close();
 
 	}
 
@@ -72,10 +73,11 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		}
+		session.close();
 	}
-	
+
 	public void updateUser(User user) {
-		
+
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
@@ -88,9 +90,10 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		}
-		
+		session.close();
+
 	}
-	
+
 	public User getUser(int userId) {
 		User user = null;
 		Transaction trns = null;
@@ -103,9 +106,27 @@ public class UserDao {
 			user = (User) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
-		} 
-		
+		}
+		session.close();
 		return user;
 	}
-	
+
+	public User controlUser(String email, String pwd) {
+		User user = null;
+		Transaction trns = null;
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from User where email = :email AND pwd = :pwd";
+			Query query = session.createQuery(queryString);
+			query.setParameter("email", email);
+			query.setParameter("pwd", pwd);
+			user = (User) query.uniqueResult();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return user;
+	}
+
 }

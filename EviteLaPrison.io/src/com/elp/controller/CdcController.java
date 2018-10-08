@@ -46,8 +46,14 @@ public class CdcController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		int cdcId = Integer.parseInt(request.getParameter("cdcId"));
+		
+		CdcDao dao = new CdcDao();
+		Cdc cdc = dao.getCdcById(cdcId);
+		
+		request.setAttribute("cdc", cdc);
+		request.getRequestDispatcher("cdcDetail.jsp").forward(request, response);
 	}
 
 }
